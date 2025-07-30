@@ -1,27 +1,45 @@
-//Lubaba Hasan UAP
+#include <bits/stdc++.h>
 #define nl '\n'
-#include<bits/stdc++.h>
 using namespace std;
+
+void solve()
+{
+    int n;
+    int mul = 1;
+    cin >> n;
+    int arr[1000];
+    int c = 0;
+
+    while (n)
+    {
+        int m = n % 10;
+        if (m != 0)
+        {
+            arr[c] = m * mul;
+            c++;
+        }
+        n /= 10;
+        mul *= 10;
+    }
+
+    cout << c << nl;
+    for (int i = 0; i < c; i++)
+    {
+        cout << arr[i] << " ";
+    }
+}
 
 int main()
 {
-    int t;
-    cin>>t;
-    while(t--){
-        string a; cin>>a;
-        int n; n = stoi(a);
-        int m=1;
-        vector<int>sumnd;
-        while(n){
-            if((n%10)*m)
-                sumnd.push_back((n%10)*m);
-            m*=10;
-            n/=10;
-        }
-        cout<<sumnd.size()<<nl;
-        for(auto i=sumnd.begin(); i!=sumnd.end(); i++)
-            cout<<*i<<" ";
-        cout<<nl;
+    ios::sync_with_stdio(0);
+    cin.tie(0);
 
+    int t = 1;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+        cout << nl;
     }
 }
+ 
