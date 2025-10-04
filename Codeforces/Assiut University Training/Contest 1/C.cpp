@@ -1,4 +1,4 @@
-//8:52
+//8:58
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -10,10 +10,13 @@ ll a, b, c, d, i = 0, m = 1, x, y;
 string s, t, u, v;
 
 int main(){
-    ll p;
-    cin >> x >> p;
+    
+    char chr;
 
-    cout << fixed << setprecision(2) << (p*100.0)/(100-x) << nl;
+    cin >> chr;
+
+    if(chr=='z') cout << 'a' << nl;
+    else cout << char(chr+1) << nl;
 
 
 }
