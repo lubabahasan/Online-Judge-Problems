@@ -4,20 +4,15 @@ using namespace std;
 #define ll long long
 
 void solve(){
-    ll n;
-    cin >> n;
+    ll n; cin >> n;
+    ll ans = 2;
 
-    for(ll k=1; k<=n; k++){
-        ll total_pos = (k*k*((k*k)-1))/2;
-
-        ll total_attack = 4*(k-1)*(k-2);
-
-        ll ans = total_pos - total_attack;
-
-        cout << ans << nl;
+    for(int i=2; i<=n; i++){
+        ans *= 2;
+        ans = ans % (1000000007);
     }
 
-    
+    cout << ans << nl;
 }
 
 int main(){

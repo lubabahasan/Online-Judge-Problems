@@ -7,13 +7,33 @@ void solve(){
     cin >> s;
 
     string w = "WUB";
+    string sentence = "";
 
-    for (int i = 0; i < s.size(): i++){
+    for (int i = 0; i < s.size(); i++){
         if (s.substr(i, 3) == w){
-            if (i > 0 && s[i-1])
+            i += 2;
+        } else {
+            while(1){
+                if (i + 2 >= s.size()){
+                    sentence += s.substr(i, s.size() - i);
+                    i += (s.size() - i);
+                    break;
+                }
+                if (s.substr(i, 3) == w) {
+                    sentence += " ";
+                    i--;
+                    break;
+                } else {
+                    sentence += s[i];
+                    i++;
+                }
+            }
+
         }
 
     }
+
+    cout << sentence << nl;
 
 
 }
